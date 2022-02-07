@@ -22,7 +22,7 @@ const install = async (minikube, inputs) => {
   core.exportVariable('MINIKUBE_HOME', minikubeDirectory);
   core.addPath(minikubeDirectory);
   logExecSync(
-    `${sudo(inputs)} ${minikubeDirectory}/minikube start --vm-driver=${driver(
+    `${sudo(inputs)} ${minikubeDirectory}/minikube start --v=5 --vm-driver=${driver(
       inputs
     )} --kubernetes-version ${inputs.kubernetesVersion} ${inputs.startArgs}`
   );
